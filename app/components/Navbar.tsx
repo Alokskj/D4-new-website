@@ -4,13 +4,27 @@ import Image from "next/image";
 import d4logo from "../assets/images/d4logo.png"
 import Link from "next/link";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
+
+
+type NavLink = {
+    label: string;
+    href: string;
+}
+
+const NAV_LINKS: NavLink[] = [
+    { label: "Home", href: "/" },
+    { label: "Events", href: "/" },
+    { label: "Team", href: "/" },
+    { label: "Gallery", href: "/" },
+    { label: "About", href: "/" },
+    { label: "Contact Us", href: "/" },
+]
 
 export default function Navbar() {
-
     const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false)
-
     return (
-        <nav className="bg-[#0E0C15]/80 shadow-sm shadow-white/10 top-0 z-20 sticky backdrop-blur-md">
+        <nav className="top-0 z-20 sticky backdrop-blur-md">
             <div className="">
                 <div className="px-5 lg:px-[82px] py-2 flex items-center justify-between gap-2">
                     <div className="flex gap-10 items-center">
@@ -22,21 +36,24 @@ export default function Navbar() {
                             />
                         </div>
                         <div className='items-center gap-10 hidden lg:flex font-light text-[18px]'>
-                            <Link className='text-white hover:text-[#EC5735] transition' href='/'>Home</Link>
-                            <Link className='text-white hover:text-[#EC5735] transition' href='/'>Learn</Link>
-                            <Link className='text-white hover:text-[#EC5735] transition' href='/team'>Team</Link>
-                            <Link className='text-white hover:text-[#EC5735] transition' href="/about">About</Link>
-                            <Link className='text-white hover:text-[#EC5735] transition' href='/events'>Events</Link>
-                            <Link className='text-white hover:text-[#EC5735] transition' href='/'>More</Link>
+                            {NAV_LINKS.map((link) => (
+                                <Link key={link.label} className='text-white text-sm hover:text-[#EC5735] transition' href={link.href}>
+                                    {link.label}
+                                </Link>
+                            ))}
                         </div>
                     </div>
 
 
                     <div className="flex items-center gap-3">
                         <div>
-                            <button className="bg-[#EC5735] hover:bg-[#fc7f66] transition text-white px-6 py-1 rounded-lg sm:text-sm text-[13px]">Join now</button>
+                           <Button size={'default'}>Join Now</Button>
                         </div>
-
+                        <div className="hidden lg:flex">
+                            <Button variant={'outline'} size={'icon'} className="bg-transparent border-none">
+                                <img src={'/icons/sun.svg'} alt="Sun Icon" width={24} height={24}/>
+                            </Button>
+                        </div>
                         <div className="lg:hidden">
                             <button
                                 onClick={() => setIsBurgerMenuOpen(!isBurgerMenuOpen)}

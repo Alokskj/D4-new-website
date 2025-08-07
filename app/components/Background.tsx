@@ -5,7 +5,7 @@ export default function Background() {
     // have to make the element dynamic (dynamic inputing css is breaking the app so going with hard coded for now will refactor later)
     return (
         <div>
-            <HexBg />
+            {/* <HexBg /> */}
             <BlurTopLeft />
             <BlurMidRight />
             <BlurMidLeft />

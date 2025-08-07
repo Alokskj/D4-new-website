@@ -9,7 +9,7 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 8 79% 57%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -63,4 +63,17 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.section-heading{
+  @apply text-4xl font-bold leading-snug
+}
+
+.gradient-text {
+  @apply bg-[linear-gradient(to_left,#A46FF2,#E49976)] text-transparent bg-clip-text [-webkit-background-clip:text]
+
+}
+
+.section-heading::after {
+  @apply content-[''] block w-72 h-1 bg-gradient-to-r from-[#A46FF2] to-[#E49976] mt-2;
 }
