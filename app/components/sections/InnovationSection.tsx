@@ -60,7 +60,7 @@ const InnovationSection = () => {
         </div>
       </div>
       {/* Stat Section  */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mt-12">
+      <div className="grid  grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mt-12">
         {Stats.map((stat, index) => (
           <StatCard key={stat.label} {...stat} reverse={index % 2 === 1} />
         ))}
