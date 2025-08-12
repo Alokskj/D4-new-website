@@ -22,11 +22,13 @@ import Footer from "../components/Footer";
 import InnovationSection from "../components/sections/InnovationSection";
 import EventsSection from "../components/sections/EventsSection";
 import CTASection from "../components/sections/CTASection";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function HeroPage() {
   return (
     <div className="relative overflow-hidden text-white ">
-      <div className="container z-10 relative pb-36">
+      <div className="wrapper z-10 relative pb-36 flex flex-col gap-12">
         <HeroSection />
         <InnovationSection />
         <EventsSection />
@@ -35,7 +37,7 @@ export default function HeroPage() {
         {/* <MentorSection /> */}
         {/* <FooterCall /> */}
       </div>
-      <Footer />
+
       <Background />
     </div>
   );
@@ -44,10 +46,10 @@ export default function HeroPage() {
 function HeroSection() {
   return (
     <div>
-      <div className="md:pt-36 pt-24 min-h-screen">
+      <div className="min-h-[calc(100dvh-94px)] flex items-center">
         <div className="flex items-center justify-center gap-6">
           <div className="lg:w-2/3 flex flex-col lg:text-left lg:items-start text-center items-center md:gap-10 gap-10">
-            <h1 className="sm:text-[55px] text-[41px] font-bold sm:leading-[60px] leading-[50px] bg-[linear-gradient(to_left,#A46FF2,#E49976)] text-transparent bg-clip-text [-webkit-background-clip:text]">
+            <h1 className="text-[clamp(2rem,2vw+2.5rem,3.5rem)] font-bold sm:leading-[60px] leading-[50px] bg-[linear-gradient(to_left,#A46FF2,#E49976)] text-transparent bg-clip-text [-webkit-background-clip:text]">
               Innovators, Visionaries & Achievers, Together.
             </h1>
             <p className="text-sm md:text-base max-w-3xl">
@@ -59,10 +61,10 @@ function HeroSection() {
             </p>
 
             <div className="flex gap-5">
-              <OrangeButton label={"Join Now"} />
+              <Button size={"lg"} asChild>
+                <Link href="/coming-soon">Join Now</Link>
+              </Button>
             </div>
-
-          
           </div>
           <div className="hidden lg:flex lg:w-1/3">
             <Image className="w-[1020px]" src={HeroImage} alt="hero image" />
@@ -72,7 +74,6 @@ function HeroSection() {
     </div>
   );
 }
-
 
 function InfoSection() {
   return (

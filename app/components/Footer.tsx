@@ -35,7 +35,7 @@ const SocialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bottom-0 z-10 relative  bg-[#0E0C15]/80  backdrop-blur-md">
+    <footer className="bottom-0 z-10 relative  bg-[#0E0C15]/80 text-white backdrop-blur-md">
       <div className="container py-8 px-4">
         {/*
                 todo:
@@ -160,13 +160,28 @@ export default function Footer() {
                 </AccordionItem>
               </Accordion>
             </div>
+            <div className="flex gap-6 items-center mx-auto">
+              {SocialLinks.map((social) => (
+                <Link key={social.link} href={social.link} target="_blank">
+                  <Image
+                    src={social.icon}
+                    alt="social icon"
+                    width={16}
+                    height={16}
+                    className="object-contain"
+                  />
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>
       <div className="bg-[#091B32]">
-        <div className="max-w-7xl mx-auto sm:text-[18px] text-[16px] font-light py-5 px-4 flex lg:flex-row flex-col lg:justify-between lg:items-center gap-8 self-start">
-            <p>Designed By D4 Community</p>
-          <p>© Copyright @ D4 Community {new Date().getFullYear()} </p>
+        <div className="max-w-7xl mx-auto py-5 px-4 flex items-center lg:flex-row flex-col lg:justify-between lg:items-center gap-2 self-start">
+          <p className="text-sm">Designed By D4 Community</p>
+          <p className="text-xs font-light">
+            © Copyright @ D4 Community {new Date().getFullYear()}{" "}
+          </p>
         </div>
       </div>
     </footer>
@@ -178,14 +193,14 @@ function FooterLinks({ heading, link1, link2, link3, link4, link5 }: any) {
     <nav>
       <div>
         {heading ? (
-          <h2 className="font-medium text-[20px] pb-4">{heading}</h2>
+          <h2 className="font-medium text-base pb-4">{heading}</h2>
         ) : null}
-        <div className="font-light flex flex-col sm:text-[16px] text-[14px] gap-2">
-          <a>{link1}</a>
-          <a>{link2}</a>
-          <a>{link3}</a>
-          <a>{link4}</a>
-          <a>{link5}</a>
+        <div className="font-light flex flex-col text-sm md:text-md gap-2">
+          <Link href="/coming-soon">{link1}</Link>
+          <Link href="/coming-soon">{link2}</Link>
+          <Link href="/coming-soon">{link3}</Link>
+          <Link href="/coming-soon">{link4}</Link>
+          <Link href="/coming-soon">{link5}</Link>
         </div>
       </div>
     </nav>

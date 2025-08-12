@@ -41,7 +41,7 @@ const EventCard = ({
       {/* Card container */}
       <div
         className={cn(
-          "w-full lg:w-[calc(50%-2rem)] shadow-xl shadow-white/10 overflow-hidden",
+          "w-full lg:w-[calc(50%-2rem)] hover:shadow-xl hover:shadow-white/10 cursor-pointer transition-all ease-in-out duration-500 overflow-hidden",
           reverse ? "lg:ml-auto" : ""
         )}
       >

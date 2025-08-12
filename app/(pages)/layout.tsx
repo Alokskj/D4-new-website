@@ -8,7 +8,6 @@ export default function PageLayout({children}: {
 }) {
     return (
         <div className="bg-[#0E0C15]">
-            <Navbar />
             {children}
         </div>
     )
