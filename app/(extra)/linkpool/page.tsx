@@ -63,12 +63,8 @@ function LinkButtons() {
     }, {
         label: "Apply to be a Volunteer",
         icon: "",
-        link: "https://forms.gle/CY8eDostKx2t8Wx49"
-    }, {
-          label: "Whatsapp Channel",
-          icon: "",
-          link: "https://whatsapp.com/channel/0029Va8QbTU8V0trPdleNl2I"
-     }]
+        link: "https://forms.gle/9jH17Cf6UNSYjhXc8"
+    }]
 
     return (
         <div className="flex flex-col gap-6">
